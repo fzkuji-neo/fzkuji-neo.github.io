@@ -1,0 +1,84 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+{% comment %}
+  With a teaser (outside grid mode) the entry is laid out in three bands:
+  the title and venue run the full width, the figure then sits beside the
+  short description, and the citation runs full width underneath. Keeping the
+  long text full-width stops a narrow right-hand column from running on past
+  the bottom of the figure. Entries without a teaser render as before.
+{% endcomment %}
+{% assign side_teaser = false %}
+{% if teaser and include.type != "grid" %}{% assign side_teaser = true %}{% endif %}
+
+{% capture teaser_src %}{% if teaser contains "://" %}{{ teaser }}{% else %}{{ teaser | prepend: "/images/" | prepend: base_path }}{% endif %}{% endcapture %}
+
+<div class="{{ include.type | default: "list" }}__item">
+  <article class="archive__item{% if side_teaser %} archive__item--with-figure{% endif %}" itemscope itemtype="http://schema.org/CreativeWork">
+    {% if include.type == "grid" and teaser %}
+      <div class="archive__item-teaser">
+        <img src="{{ teaser_src }}" alt="">
+      </div>
+    {% endif %}
+
+    {%- comment -%} Band 1 — title + venue, full width {%- endcomment -%}
+    <h2 class="archive__item-title" itemprop="headline">
+      {{- title | strip -}}
+      {%- if post.oral %} <span class="archive__item-badge">Oral</span>{% endif -%}
+    </h2>
+
+    {% if post.read_time %}
+      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
+    {% endif %}
+
+    {% if post.authors %}
+      <p class="archive__item-authors">{{ post.authors | replace: 'Zichuan Fu', '<strong>Zichuan Fu</strong>' }}</p>
+    {% endif %}
+
+    {% if post.collection == 'teaching' %}
+      <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+    {% elsif post.collection == 'publications' %}
+      <p class="archive__item-venue"><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+    {% elsif post.date %}
+      <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+    {% endif %}
+
+    {%- comment -%} Band 2 — figure beside the short description {%- endcomment -%}
+    <div class="archive__item-main">
+      {% if side_teaser %}
+        <a class="archive__item-figure" href="{{ base_path }}{{ post.url }}">
+          <img src="{{ teaser_src }}" alt="" loading="lazy">
+        </a>
+      {% endif %}
+
+      <div class="archive__item-body">
+        {% if post.excerpt and site.read_more != 'enabled' %}
+          <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
+        {% elsif post.excerpt and site.read_more == 'enabled' %}
+          <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
+        {% endif %}
+
+        {%- comment -%} Links sit under the description, beside the figure {%- endcomment -%}
+        {% if post.paperurl or post.codeurl or post.slidesurl %}
+          <p class="archive__item-links">
+            {% if post.paperurl %}<span class="archive__item-link"><span class="archive__item-link-label">Paper:</span> <a href="{{ post.paperurl }}">{{ post.paperlabel | default: post.paperurl }}</a></span>{% endif %}
+            {% if post.codeurl %}<span class="archive__item-link"><span class="archive__item-link-label">Code:</span> <a href="{{ post.codeurl }}">{{ post.codeurl | remove: 'https://github.com/' }}</a></span>{% endif %}
+            {% if post.slidesurl %}<span class="archive__item-link"><span class="archive__item-link-label">Slides:</span> <a href="{{ post.slidesurl }}">Download</a></span>{% endif %}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+
+  </article>
+</div>

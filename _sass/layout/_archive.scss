@@ -1,0 +1,351 @@
+/* ==========================================================================
+   ARCHIVE
+   ========================================================================== */
+
+.archive {
+  margin-bottom: 2em;
+
+  @include breakpoint($medium) {
+    @include span(12 of 12);
+  }
+
+  @include breakpoint($large) {
+    @include span(10 of 12 last);
+    @include prefix(0.5 of 12);
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: underline;
+
+      img {
+        box-shadow: 0 0 10px rgba(#000, 0.25);
+      }
+    }
+  }
+}
+
+.archive__subtitle {
+  margin: 1.414em 0 0;
+  padding-bottom: 0.5em;
+  font-size: $type-size-5;
+  color: var(--global-text-color-light);
+  border-bottom: 1px solid var(--global-border-color);
+
+  + .list__item .archive__item-title {
+    margin-top: 0.5em;
+  }
+}
+
+.archive__item-title {
+  margin-bottom: 0.25em;
+  font-family: $sans-serif-narrow;
+
+  a + a {
+    opacity: 0.5;
+  }
+}
+
+/* remove border*/
+.page__content {
+
+  .archive__item-title {
+    margin-top: 1em;
+    border-bottom: none;
+  }
+}
+
+.archive__item-excerpt {
+  margin-top: 0;
+  font-size: $type-size-6;
+
+  & + p {
+    text-indent: 0;
+  }
+}
+
+.archive__item-teaser {
+  border-radius: $border-radius;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}
+
+.archive__item:hover {
+  .archive__item-teaser {
+    box-shadow: 0 0 10px rgba(#000, 0.25);
+  }
+
+  .archive__item-title {
+    text-decoration: underline;
+
+    /* the badge is a label, not part of the linked title text */
+    .archive__item-badge {
+      text-decoration: none;
+    }
+  }
+}
+
+/*
+   Entry with a figure — image left, text right
+   ========================================================================== */
+
+/* Stacked by default so the figure stays legible on a phone; the two-column
+   arrangement starts at $medium, where there is room for both. */
+.archive__item--with-figure {
+  .archive__item-figure {
+    display: block;
+    margin-bottom: 0.75em;
+    border-radius: $border-radius;
+    overflow: hidden;
+    text-decoration: none;
+    border-bottom: 0;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform 0.25s ease;
+    }
+  }
+
+  &:hover .archive__item-figure img {
+    transform: scale(1.02);
+  }
+
+  @include breakpoint($medium) {
+    /* Only the middle band is two columns — the title, venue, and citation
+       above and below it stay full width. */
+    .archive__item-main {
+      display: flex;
+      align-items: center;
+      gap: 1.5em;
+    }
+
+    .archive__item-figure {
+      flex: 0 0 46%;
+      max-width: 46%;
+      margin-bottom: 0;
+    }
+
+    .archive__item-body {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+  }
+}
+
+
+/*
+   List view
+   ========================================================================== */
+
+.list__item {
+  @include breakpoint($medium) {
+    padding-right: $right-sidebar-width-narrow;
+  }
+
+  @include breakpoint($large) {
+    padding-right: $right-sidebar-width;
+  }
+
+  @include breakpoint($x-large) {
+    padding-right: $right-sidebar-width-wide;
+  }
+
+  .page__meta {
+    margin: 0 0 4px;
+  }
+}
+
+
+/*
+   Grid view
+   ========================================================================== */
+
+.grid__item {
+  margin-bottom: 2em;
+
+  .page__meta {
+    margin: 0 0 4px;
+  }
+
+  .archive__item-title {
+    margin-top: 0.5em;
+    font-size: $type-size-5;
+  }
+
+  .archive__item-excerpt {
+    display: none;
+  }
+
+  @include breakpoint($small) {
+    @include gallery(5 of 10);
+    .archive__item-teaser {
+      max-height: 200px;
+    }
+  }
+
+  @include breakpoint($medium) {
+    margin-left: 0; /* reset before mixin does its thing*/
+    margin-right: 0; /* reset before mixin does its thing*/
+    @include gallery(2.5 of 10);
+
+    .archive__item-teaser {
+      max-height: 120px;
+    }
+
+    .archive__item-excerpt {
+      display: block;
+      font-size: $type-size-6;
+    }
+  }
+}
+
+
+/*
+   Features
+   ========================================================================== */
+
+.feature__wrapper {
+  @include clearfix();
+  margin-bottom: 2em;
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+.feature__item {
+  margin-bottom: 2em;
+  font-size: 1.25rem;
+
+  @include breakpoint($small) {
+    margin-bottom: 0;
+    @include gallery(4 of 12);
+
+    .feature__item-teaser {
+      max-height: 200px;
+      overflow: hidden;
+    }
+  }
+
+  &--left {
+    @include full();
+    font-size: 1.25rem;
+
+    .archive__item-teaser {
+      margin-bottom: 2em;
+    }
+
+    @include breakpoint($small) {
+      .archive__item-teaser {
+        @include span(5 of 12);
+      }
+
+      .archive__item-body {
+        @include span(7 of 12 last);
+        @include prefix(0.5 of 12);
+        @include suffix(1 of 12);
+      }
+    }
+  }
+
+  &--right {
+    @include full();
+    font-size: 1.25rem;
+
+    .archive__item-teaser {
+      margin-bottom: 2em;
+    }
+
+    @include breakpoint($small) {
+      text-align: right;
+
+      .archive__item-teaser {
+        @include span(5 of 12 rtl);
+      }
+
+      .archive__item-body {
+        @include span(7 of 12 last rtl);
+        @include prefix(0.5 of 12);
+        @include suffix(1 of 12);
+      }
+    }
+  }
+
+  &--center {
+    @include full();
+    font-size: 1.25rem;
+
+    .archive__item-teaser {
+      margin-bottom: 2em;
+    }
+
+    @include breakpoint($small) {
+      text-align: center;
+
+      .archive__item-teaser {
+        margin: 0 auto;
+        width: span(5 of 12);
+      }
+
+      .archive__item-body {
+        margin: 0 auto;
+        width: span(7 of 12);
+      }
+    }
+  }
+}
+
+/*
+   Publication entry — authors, venue, and the Oral badge
+   ========================================================================== */
+
+.archive__item-authors {
+  margin: 0.15em 0 0.2em;
+  font-size: $type-size-5;
+}
+
+.archive__item-venue {
+  margin: 0 0 0.6em;
+  font-size: $type-size-5;
+}
+
+/* Under the description, beside the figure: one link per line so the label
+   and the value stay together on a narrow column. */
+.archive__item-links {
+  margin-top: 0.8em;
+  font-size: $type-size-6;
+}
+
+.archive__item-link {
+  display: block;
+}
+
+/* Names what the link is, so a bare DOI or repo path isn't left unexplained. */
+.archive__item-link-label {
+  font-weight: bold;
+}
+
+/* Sits at the end of the title, so it must not inherit the heading's size,
+   weight, or underline. A filled pill reads as a label rather than a word
+   that ran on from the title. */
+.archive__item-badge {
+  display: inline-block;
+  margin-left: 0.5em;
+  padding: 0.12em 0.6em;
+  border-radius: 999px;
+  background: var(--global-link-color);
+  color: #fff;
+  font-family: $sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.6;
+  text-decoration: none;
+  white-space: nowrap;
+  /* nudge up to sit against the title's cap height */
+  vertical-align: 0.22em;
+}
