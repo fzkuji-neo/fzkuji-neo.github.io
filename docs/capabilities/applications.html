@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" data-base="/docs/" data-page-lang="en" data-build="1789756792" data-alt-lang-url="/docs/capabilities/applications.zh.html">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open applications from the new tab page · OpenProgram Docs</title>
+<meta name="description" content="Open Applications in the sidebar to install software from a local directory, inspect its source and version, open it, enable or disable it, hide its launcher">
+<link rel="canonical" href="https://openprogram.io/docs/capabilities/applications.html">
+<link rel="alternate" hreflang="en" href="https://openprogram.io/docs/capabilities/applications.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://openprogram.io/docs/capabilities/applications.zh.html">
+<link rel="alternate" hreflang="x-default" href="https://openprogram.io/docs/capabilities/applications.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"OpenProgram Docs","item":"https://openprogram.io/docs/"},{"@type":"ListItem","position":2,"name":"Open applications from the new tab page"}]}</script>
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="OpenProgram">
+<meta property="og:url" content="https://openprogram.io/docs/capabilities/applications.html">
+<meta property="og:title" content="Open applications from the new tab page · OpenProgram Docs">
+<meta property="og:description" content="Open Applications in the sidebar to install software from a local directory, inspect its source and version, open it, enable or disable it, hide its launcher">
+<meta property="og:image" content="https://openprogram.io/docs/images/openprogram-social-card.png">
+<meta property="og:image:secure_url" content="https://openprogram.io/docs/images/openprogram-social-card.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="OpenProgram: Self-Programming AI Agent Framework">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Open applications from the new tab page · OpenProgram Docs">
+<meta name="twitter:description" content="Open Applications in the sidebar to install software from a local directory, inspect its source and version, open it, enable or disable it, hide its launcher">
+<meta name="twitter:image" content="https://openprogram.io/docs/images/openprogram-social-card.png">
+<meta name="twitter:image:alt" content="OpenProgram: Self-Programming AI Agent Framework">
+<script>
+(function(){try{var t=localStorage.getItem('op-docs-theme');
+if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/docs/assets/mark.svg">
+<link rel="stylesheet" href="/docs/assets/site.css?v=c382c0c8">
+<link rel="stylesheet" href="/docs/assets/pygments-light.css" media="(prefers-color-scheme: light)" id="pyg-light">
+<link rel="stylesheet" href="/docs/assets/pygments-dark.css" media="(prefers-color-scheme: dark)" id="pyg-dark">
+
+</head>
+<body>
+<header class="topbar">
+  <button class="icon hamburger" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg></button>
+  <a class="brand" href="/docs/index.html"><img class="mark" src="/docs/assets/mark.svg" alt="">OpenProgram Docs</a>
+  <div class="spacer"></div>
+  <button class="search-trigger" aria-label="Search">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 14 14"/></svg><span class="label" data-i18n="search">Search docs</span><kbd>⌘K</kbd>
+  </button>
+  <div class="lang-wrap">
+    <button class="icon lang-trigger" id="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Language">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="6.2"/><path d="M1.8 8h12.4" stroke-linecap="round"/><ellipse cx="8" cy="8" rx="2.8" ry="6.2"/></svg><span class="lang-label">EN</span><svg class="chev" width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>
+    </button>
+    <div class="lang-menu" id="lang-menu" role="menu">
+      <button class="lang-opt" data-lang="en" role="menuitem"><span>English</span><svg class="check" width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3L13 5"/></svg></button>
+      <button class="lang-opt" data-lang="zh" role="menuitem"><span>简体中文</span><svg class="check" width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3L13 5"/></svg></button>
+    </div>
+  </div>
+  <button class="icon" id="theme-toggle" aria-label="Toggle theme"><svg class="ic-moon" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M13.5 9.5A6 6 0 1 1 6.5 2.5a5 5 0 0 0 7 7z"/></svg><svg class="ic-sun" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="3.2"/><path d="M8 1.2v1.8M8 13v1.8M1.2 8H3M13 8h1.8M3.2 3.2l1.3 1.3M11.5 11.5l1.3 1.3M12.8 3.2l-1.3 1.3M4.5 11.5l-1.3 1.3"/></svg></button>
+</header>
+<nav class="tabbar"><a class="tablink" href="/docs/README.html" data-title-zh="开始使用">Get started</a><a class="tablink" href="/docs/install/install.html" data-title-zh="安装">Install</a><a class="tablink active" href="/docs/capabilities/README.html" data-title-zh="能力">Capabilities</a><a class="tablink" href="/docs/interfaces/README.html" data-title-zh="界面">Interfaces</a><a class="tablink" href="/docs/models/README.html" data-title-zh="模型">Models</a><a class="tablink" href="/docs/integrations/claude-code.html" data-title-zh="集成">Integrations</a><a class="tablink" href="/docs/server/README.html" data-title-zh="服务与运维">Server &amp; Ops</a><a class="tablink" href="/docs/reference/README.html" data-title-zh="参考">Reference</a><a class="tablink" href="/docs/reference/design/README.html" data-title-zh="设计">Design</a></nav>
+
+<div class="scrim"></div>
+<div class="layout">
+  <nav class="sidebar">
+    <input class="nav-filter" type="text" data-i18n-ph="nav_filter"
+           placeholder="Filter docs…" autocomplete="off" spellcheck="false">
+    <div class="nav-tree"><div class="nav-sec">
+<div class="nav-sec-title" data-title-zh="概览">Overview</div>
+<a class="navlink" href="/docs/capabilities/README.html" data-title-zh="概览" data-href-en="/docs/capabilities/README.html" data-href-zh="/docs/capabilities/README.zh.html">Overview</a>
+<a class="navlink active" href="/docs/capabilities/applications.html" data-title-zh="从新标签页打开应用" data-href-en="/docs/capabilities/applications.html" data-href-zh="/docs/capabilities/applications.zh.html">Open applications from the new tab page</a>
+<a class="navlink" href="/docs/capabilities/framework-control.html" data-title-zh="通过后端工具操作 OpenProgram" data-href-en="/docs/capabilities/framework-control.html" data-href-zh="/docs/capabilities/framework-control.zh.html">Operate OpenProgram through backend tools</a>
+</div>
+<div class="nav-sec">
+<div class="nav-sec-title">Agentic Programming</div>
+<a class="navlink" href="/docs/capabilities/agentic-programming/README.html" data-title-zh="指南" data-href-en="/docs/capabilities/agentic-programming/README.html" data-href-zh="/docs/capabilities/agentic-programming/README.zh.html">Guide</a>
+<a class="navlink" href="/docs/capabilities/agentic-programming/philosophy.html" data-title-zh="设计哲学" data-href-en="/docs/capabilities/agentic-programming/philosophy.html" data-href-zh="/docs/capabilities/agentic-programming/philosophy.zh.html">Philosophy</a>
+<a class="navlink" href="/docs/capabilities/agentic-programming/embedding-in-your-own-stack.html" data-title-zh="嵌入到你自己的技术栈" data-href-en="/docs/capabilities/agentic-programming/embedding-in-your-own-stack.html" data-href-zh="/docs/capabilities/agentic-programming/embedding-in-your-own-stack.zh.html">Embedding in your own stack</a>
+</div>
+<div class="nav-sec">
+<div class="nav-sec-title" data-title-zh="编写函数">Writing functions</div>
+<a class="navlink" href="/docs/capabilities/agentic-programming/writing-functions/pure-python.html" data-title-zh="纯 Python" data-href-en="/docs/capabilities/agentic-programming/writing-functions/pure-python.html" data-href-zh="/docs/capabilities/agentic-programming/writing-functions/pure-python.zh.html">Pure Python</a>
+<a class="navlink" href="/docs/capabilities/agentic-programming/writing-functions/agentic-function.html" data-title-zh="@agentic_function" data-href-en="/docs/capabilities/agentic-programming/writing-functions/agentic-function.html" data-href-zh="/docs/capabilities/agentic-programming/writing-functions/agentic-function.zh.html">@agentic_function</a>
+<a class="navlink" href="/docs/capabilities/agentic-programming/writing-functions/function-metadata.html" data-title-zh="函数元数据" data-href-en="/docs/capabilities/agentic-programming/writing-functions/function-metadata.html" data-href-zh="/docs/capabilities/agentic-programming/writing-functions/function-metadata.zh.html">Function metadata</a>
+</div>
+<div class="nav-sec">
+<div class="nav-sec-title" data-title-zh="选择下一步">Choosing the next step</div>
+<a class="navlink" href="/docs/capabilities/agentic-programming/choosing-the-next-step/tool-calling.html" data-title-zh="工具调用循环" data-href-en="/docs/capabilities/agentic-programming/choosing-the-next-step/tool-calling.html" data-href-zh="/docs/capabilities/agentic-programming/choosing-the-next-step/tool-calling.zh.html">Tool-call loop</a>
+<a class="navlink" href="/docs/capabilities/agentic-programming/choosing-the-next-step/fixed-order-calls.html" data-title-zh="固定顺序调用" data-href-en="/docs/capabilities/agentic-programming/choosing-the-next-step/fixed-order-calls.html" data-href-zh="/docs/capabilities/agentic-programming/choosing-the-next-step/fixed-order-calls.zh.html">Fixed-order calls</a>
+<a class="navlink" href="/docs/capabilities/agentic-programming/choosing-the-next-step/next-step-decision.html" data-title-zh="下一步决策" data-href-en="/docs/capabilities/agentic-programming/choosing-the-next-step/next-step-decision.html" data-href-zh="/docs/capabilities/agentic-programming/choosing-the-next-step/next-step-decision.zh.html">Next-step decision</a>
+</div>
+<div class="nav-sec">
+<div class="nav-sec-title">Agentic Workflows</div>
+<a class="navlink" href="/docs/capabilities/workflows/README.html" data-title-zh="Agentic Workflows" data-href-en="/docs/capabilities/workflows/README.html" data-href-zh="/docs/capabilities/workflows/README.zh.html">Agentic workflows</a>
+<a class="navlink" href="/docs/capabilities/workflows/authoring.html" data-title-zh="编写、测试和发布 Workflow" data-href-en="/docs/capabilities/workflows/authoring.html" data-href-zh="/docs/capabilities/workflows/authoring.zh.html">Write, test, and publish a Workflow</a>
+<a class="navlink" href="/docs/capabilities/workflows/reports.html" data-title-zh="准备每周报告" data-href-en="/docs/capabilities/workflows/reports.html" data-href-zh="/docs/capabilities/workflows/reports.zh.html">Prepare weekly reports</a>
+<a class="navlink" href="/docs/capabilities/workflows/gui-agent.html" data-title-zh="GUI Agent" data-href-en="/docs/capabilities/workflows/gui-agent.html" data-href-zh="/docs/capabilities/workflows/gui-agent.zh.html">GUI Agent</a>
+<a class="navlink" href="/docs/capabilities/workflows/research-agent.html" data-title-zh="Research Agent" data-href-en="/docs/capabilities/workflows/research-agent.html" data-href-zh="/docs/capabilities/workflows/research-agent.zh.html">Research Agent</a>
+<a class="navlink" href="/docs/capabilities/workflows/wiki-agent.html" data-title-zh="Wiki Agent" data-href-en="/docs/capabilities/workflows/wiki-agent.html" data-href-zh="/docs/capabilities/workflows/wiki-agent.zh.html">Wiki Agent</a>
+</div>
+<div class="nav-sec">
+<div class="nav-sec-title" data-title-zh="记忆">Memory</div>
+<a class="navlink" href="/docs/capabilities/memory.html" data-title-zh="查看和编辑 Memory" data-href-en="/docs/capabilities/memory.html" data-href-zh="/docs/capabilities/memory.zh.html">Read and edit Memory</a>
+</div>
+<div class="nav-sec">
+<div class="nav-sec-title" data-title-zh="会话目标">Session goals</div>
+<a class="navlink" href="/docs/capabilities/goal.html" data-title-zh="聊天 Goal" data-href-en="/docs/capabilities/goal.html" data-href-zh="/docs/capabilities/goal.zh.html">Goals in chat</a>
+</div>
+<div class="nav-sec">
+<div class="nav-sec-title" data-title-zh="Agentic 工作流">Agentic workflows</div>
+<a class="navlink" href="/docs/capabilities/agentic-workflow.html" data-title-zh="自编程 Workflow" data-href-en="/docs/capabilities/agentic-workflow.html" data-href-zh="/docs/capabilities/agentic-workflow.zh.html">Self-programming Workflows</a>
+</div>
+<div class="nav-sec">
+<div class="nav-sec-title" data-title-zh="询问 OpenProgram 自身">Asking about OpenProgram</div>
+<a class="navlink" href="/docs/capabilities/docs-question.html" data-title-zh="询问 OpenProgram 自身" data-href-en="/docs/capabilities/docs-question.html" data-href-zh="/docs/capabilities/docs-question.zh.html">Asking about OpenProgram itself</a>
+</div>
+<div class="nav-sec">
+<div class="nav-sec-title" data-title-zh="安全审查">Security review</div>
+<a class="navlink" href="/docs/capabilities/security-review.html" data-title-zh="安全审查" data-href-en="/docs/capabilities/security-review.html" data-href-zh="/docs/capabilities/security-review.zh.html">Security review</a>
+</div>
+<div class="nav-sec">
+<div class="nav-sec-title" data-title-zh="扩展">Extending</div>
+<a class="navlink" href="/docs/capabilities/installing-harnesses.html" data-title-zh="Harness" data-href-en="/docs/capabilities/installing-harnesses.html" data-href-zh="/docs/capabilities/installing-harnesses.zh.html">Harnesses</a>
+<a class="navlink" href="/docs/capabilities/skills.html" data-title-zh="Skills" data-href-en="/docs/capabilities/skills.html" data-href-zh="/docs/capabilities/skills.zh.html">Skills</a>
+<a class="navlink" href="/docs/capabilities/distill.html" data-title-zh="Distill" data-href-en="/docs/capabilities/distill.html" data-href-zh="/docs/capabilities/distill.zh.html">Distill</a>
+<a class="navlink" href="/docs/capabilities/plugins.html" data-title-zh="Plugins" data-href-en="/docs/capabilities/plugins.html" data-href-zh="/docs/capabilities/plugins.zh.html">Plugins</a>
+<a class="navlink" href="/docs/capabilities/mcp.html" data-title-zh="MCP" data-href-en="/docs/capabilities/mcp.html" data-href-zh="/docs/capabilities/mcp.zh.html">MCP</a>
+<a class="navlink" href="/docs/capabilities/tools.html" data-title-zh="内置工具" data-href-en="/docs/capabilities/tools.html" data-href-zh="/docs/capabilities/tools.zh.html">Built-in tools</a>
+<a class="navlink" href="/docs/capabilities/lsp.html" data-title-zh="Language server 工具" data-href-en="/docs/capabilities/lsp.html" data-href-zh="/docs/capabilities/lsp.zh.html">Language server tools</a>
+</div>
+<div class="nav-sec">
+<div class="nav-sec-title" data-title-zh="概览">Overview</div>
+<a class="navlink" href="/docs/capabilities/commit-push-pr.html" data-title-zh="Commit、push、PR" data-href-en="/docs/capabilities/commit-push-pr.html" data-href-zh="/docs/capabilities/commit-push-pr.zh.html">Commit, push, PR</a>
+<a class="navlink" href="/docs/capabilities/permissions.html" data-title-zh="控制工具权限" data-href-en="/docs/capabilities/permissions.html" data-href-zh="/docs/capabilities/permissions.zh.html">Control tool permissions</a>
+</div>
+<div class="nav-sec">
+<div class="nav-sec-title" data-title-zh="指南">Guide</div>
+<a class="navlink" href="/docs/capabilities/agentic-programming/self-programming-ai-agents.html">Self-Programming AI Agents</a>
+</div></div>
+  </nav>
+  <main class="content"><button class="fs-toggle" aria-label="Fullscreen" title="Fullscreen (Esc to exit)"><svg class="ic-expand" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.2 2H2v4.2M9.8 2H14v4.2M6.2 14H2V9.8M9.8 14H14V9.8"/></svg><svg class="ic-collapse" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.2h4.2V2M14 6.2H9.8V2M2 9.8h4.2V14M14 9.8H9.8V14"/></svg></button><article><nav class="breadcrumb"><span class="bc-seg" data-title-zh="能力">Capabilities</span> <span class='bc-sep'>›</span> <span class="bc-seg" data-title-zh="概览">Overview</span> <span class='bc-sep'>›</span> <span class="bc-seg bc-current" data-title-zh="从新标签页打开应用">Open applications from the new tab page</span></nav><h1 id="open-applications-from-the-new-tab-page">Open applications from the new tab page<a class="header-anchor" href="#open-applications-from-the-new-tab-page">#</a></h1>
+<p>Open <strong>Applications</strong> in the sidebar to install software from a local directory, inspect its source and version, open it, enable or disable it, hide its launcher button, update from its source, or uninstall it while retaining data. The install form requires explicit trust for Python backends. Update fills the install form; review the source before submitting. Tools, Workflows and harness packages remain in <strong>Abilities</strong>.</p>
+<p>The top-level <code>openprogram apps</code> commands manage software; existing <code>openprogram programs apps</code> commands remain compatible. Software registrations live in <code>~/.openprogram/applications/catalog.json</code>, separate from Program sources. Existing registrations migrate on first access, retaining versions, disabled/hidden settings, uninstall records and instance data. A conflicting registration stops migration rather than overwriting either copy.</p>
+<p>An installed application appears beside Files, New chat, Browser and Terminal.
+Click its name to open its own interface in a tab. Opening it again selects the
+same instance. Closing the tab does not cancel its operations.</p>
+<p>Applications contain standard HTML, CSS and JavaScript, optionally backed by
+Python operations. Their interface does not have to use OpenProgram components.
+Bundle frontend dependencies locally and use relative asset URLs, including
+relative JavaScript module imports. Remote scripts, direct owner API access,
+nested frames and form navigation are blocked. Web UI code runs in a sandboxed
+iframe with an opaque origin. A resource URL authorizes reads of only that
+application version's UI directory; it is not an owner credential.</p>
+<h2 id="install-and-open">Install and open<a class="header-anchor" href="#install-and-open">#</a></h2>
+<p>With the local OpenProgram worker running:</p>
+<pre><code class="language-bash">openprogram<span class="w"> </span>apps<span class="w"> </span>install<span class="w"> </span>/absolute/path/to/application
+openprogram<span class="w"> </span>apps<span class="w"> </span>list
+</code></pre>
+<p>Python backends execute trusted local code with your operating-system account.
+Review their source and dependencies, then pass <code>--trust</code> to authorize them:</p>
+<pre><code class="language-bash">openprogram<span class="w"> </span>apps<span class="w"> </span>install<span class="w"> </span>/absolute/path/to/application<span class="w"> </span>--trust
+</code></pre>
+<p>The new tab page refreshes its application list when focused and every ten
+seconds. Project-scoped applications use the current selected project when
+opened; changing the conversation project does not rebind an existing instance.
+With no current project, a single saved binding is reused. First use or multiple
+saved bindings opens a project chooser, which also accepts a new folder.
+Global applications share one instance for the current owner. Project instances
+have separate business data.</p>
+<p>See the <a href="https://github.com/fzkuji-neo/OpenProgram/tree/main/examples/applications/calculator">calculator</a>,
+<a href="https://github.com/fzkuji-neo/OpenProgram/tree/main/examples/applications/reader">paper reader</a>
+and <a href="https://github.com/fzkuji-neo/OpenProgram/tree/main/examples/applications/file-analysis">file analysis</a>
+examples. The reader uses your configured model only when Summarize is clicked.
+Saving notes does not require a model.</p>
+<h2 id="application-package">Application package<a class="header-anchor" href="#application-package">#</a></h2>
+<p>Place <code>application.json</code> in the package root:</p>
+<pre><code class="language-json"><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;local.notes&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Notes&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;scope&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;global&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dataSchema&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ui&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;root&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ui&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;entry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;index.html&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;capabilities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;storage.app&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;model.invoke&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;backend&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;entry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;backend:operations&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;operations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;summarize&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;agent&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p><code>ui.root</code> is relative to the package; <code>ui.entry</code> is relative to that directory.
+Keep Python and private configuration outside <code>ui.root</code>. The optional backend
+exports a dictionary of callables. Each callable receives <code>(input, context)</code> and
+returns a JSON value, synchronously or asynchronously. Input and output use JSON
+Schema. Only operations with <code>agent: true</code> are callable through the Program client.</p>
+<p>Supported capabilities are <code>storage.app</code>, <code>model.invoke</code>, and
+<code>files.project.read</code>. They restrict the host bridge, not the operating-system
+permissions of trusted Python code. Exact pinned requirements can be listed in
+<code>backend.dependencies</code>, such as <code>[&quot;package-name==1.2.3&quot;]</code>. Each content version
+gets its own Python environment; it also uses the installed host framework and
+its dependencies. Python backends are checked in a separate process before
+registration. Merely listing applications does not import their code.</p>
+<h2 id="browser-and-python-apis">Browser and Python APIs<a class="header-anchor" href="#browser-and-python-apis">#</a></h2>
+<p>The host provides <code>window.openprogramApp</code> inside the application page:</p>
+<ul>
+<li><code>load()</code> returns <code>{value, version}</code>; <code>save(value, version)</code> saves only if that
+version is still current. Reload after a concurrent-write error.</li>
+<li><code>run(operation, input, requestKey)</code> returns a durable run record. Reuse the same
+request key when retrying the same submission; different input with that key
+is rejected.</li>
+<li><code>runs()</code> lists recent runs; <code>status(id, after)</code> returns status, result, error,
+pending question and events after a sequence cursor.</li>
+<li><code>cancel(id)</code> cancels execution; <code>answer(id, requestId, answer)</code> answers its
+current question. Runs from another instance are inaccessible through this bridge.</li>
+</ul>
+<p>Python operations receive <code>context.load()</code>, <code>context.save(value, expected_version=...)</code>, <code>context.progress(value)</code>, <code>context.ask(question)</code>, and
+<code>context.read_file(relative_path)</code>. File reads require the declared capability
+and a bound project. Model-enabled operations can call the existing <code>llm()</code> and
+<code>agent()</code> APIs with an ambient Runtime; model credentials stay in the backend.
+Use <code>context.ask()</code> for application questions. Runtime workflow interactions
+that require predeclared durable waits retain their existing requirements.</p>
+<p>Programs use the same operations:</p>
+<pre><code class="language-python"><span class="kn">from</span><span class="w"> </span><span class="nn">openprogram.programs.application_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">status</span>
+
+<span class="n">job</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="s2">&quot;local.notes&quot;</span><span class="p">,</span> <span class="s2">&quot;summarize&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">},</span> <span class="n">request_key</span><span class="o">=</span><span class="s2">&quot;summary-1&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">status</span><span class="p">(</span><span class="n">job</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]))</span>
+</code></pre>
+<p>Equivalent CLI entry points are <code>programs apps run APP OPERATION --input JSON</code>
+(with <code>--project ID</code> for project scope), <code>programs apps status RUN_ID</code>, and
+<code>programs apps cancel RUN_ID</code>.</p>
+<h2 id="persistence-and-lifecycle">Persistence and lifecycle<a class="header-anchor" href="#persistence-and-lifecycle">#</a></h2>
+<p>Code is copied to a content-addressed version in the profile's application
+storage. Editing the source directory does not change an installed version.
+Use <code>install --replace</code> (and <code>--trust</code> for Python) to activate a new version.
+Already-running operations retain their original code. Reopen an older page
+before submitting operations against the new version.</p>
+<p>Business state is stored separately from code and conversations. Each instance
+has its own SQLite state, with a 4 MiB JSON value limit. Events have a 1 MiB limit.
+Execution status uses the existing execution store; model call records use the
+existing session-node writer under application run storage.</p>
+<p>Stopping the worker interrupts an unfinished Python function; a restart reports
+it as interrupted. Arbitrary Python stacks are not automatically resumed.
+Persist incremental progress and explicitly start another operation after
+reviewing the interruption. A schema or scope change is rejected before
+activation; automatic data migrations are not supported in this version.</p>
+<pre><code class="language-bash">openprogram<span class="w"> </span>apps<span class="w"> </span>uninstall<span class="w"> </span>local.notes
+</code></pre>
+<p>Uninstall removes the menu entry and cancels active operations, retaining saved
+data, previous code versions and their schema/scope compatibility identity.
+Reinstalling a compatible package restores that data; incompatible reinstallation
+is rejected before activation. The owner API also supports <code>enabled</code>, <code>hidden</code>
+and <code>display_title</code> through <code>PATCH /api/applications/{id}</code>. These are distinct:
+hiding an entry does not cancel a task; disabling it does.</p>
+<p>Standalone deployment, non-Python backend adapters, MCP Apps compatibility and
+embedding native operating-system GUI windows are not implemented.</p>
+<p>Project-scoped operations resolve the bound project ID before starting and before
+reading a project file. Moving the project keeps the same application instance
+and saved data. A missing, replaced, or unverified location blocks new operations;
+saved application data remains readable.</p>
+<h2 id="use-an-application-as-a-resource">Use an application as a resource<a class="header-anchor" href="#use-an-application-as-a-resource">#</a></h2>
+<p>Enabled applications automatically appear as <code>application.&lt;id&gt;</code> in
+<code>resource(action=&quot;describe&quot;)</code>. Installation, disable, update and uninstall
+are reflected without restarting the worker. <code>open</code> accepts <code>project_id</code> for
+a project-scoped app and associates the instance with the calling session.
+<code>observe</code> returns instance state and recent runs; <code>act</code> accepts a declared
+Agent-visible operation and a stable <code>request_key</code>. Use the <code>instance_id</code> and
+<code>digest</code> returned by open. Updated packages reject an older digest.</p>
+<p><code>status</code>, <code>cancel</code> and <code>answer</code> require a run belonging to that exact instance.
+<code>save</code> uses the expected storage version when <code>storage.app</code> is declared.
+<code>release</code> removes the session association, preserving the instance, data and
+running operations. Hiding its view also leaves operations running. The
+Resources view and top tab open the same instance in the existing sandboxed
+application frame. No separate frontend adapter is needed.</p>
+<p>Generate a runnable starter package through <code>POST /api/applications/scaffold</code>
+with <code>path</code>, <code>app_id</code> and <code>title</code>, available through the
+<a href="/docs/capabilities/framework-control.html">framework tool</a>. The parent directory must exist and
+the target directory must not exist. The package separates <code>backend/operations.py</code>,
+<code>ui/index.html</code> and <code>application.json</code>; its UI and Agent both call the declared
+read/save operations. Review and install it through <code>/api/applications/install</code>
+with the source path and <code>trust: true</code>. Extend its backend and manifest to expose
+additional operations; do not implement business changes only inside UI events.</p>
+<div class="page-updated"><span data-i18n="updated">Last updated</span> · 2026-09-19</div><div class="prevnext"><a class="pn-link pn-prev" href="/docs/capabilities/README.html"><span class="pn-dir" data-i18n="prev">Previous</span><span class="pn-title">Overview</span></a><a class="pn-link pn-next" href="/docs/capabilities/framework-control.html"><span class="pn-dir" data-i18n="next">Next</span><span class="pn-title">Operate OpenProgram through backend tools</span></a></div></article></main>
+  <aside class="toc"><div class="toc-title" data-i18n="on_this_page">On this page</div>
+<div class="toc-list">
+<a class="" href="#install-and-open">Install and open</a>
+<a class="" href="#application-package">Application package</a>
+<a class="" href="#browser-and-python-apis">Browser and Python APIs</a>
+<a class="" href="#persistence-and-lifecycle">Persistence and lifecycle</a>
+<a class="" href="#use-an-application-as-a-resource">Use an application as a resource</a>
+</div></aside>
+</div>
+
+<div class="search-overlay">
+  <div class="search-box">
+    <input type="text" data-i18n-ph="search_ph" placeholder="Search titles or text…" autocomplete="off" spellcheck="false">
+    <div class="search-results"></div>
+  </div>
+</div>
+
+<script src="/docs/assets/site.js?v=c382c0c8"></script>
+</body>
+</html>
