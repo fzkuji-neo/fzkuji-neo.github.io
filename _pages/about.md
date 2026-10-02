@@ -63,5 +63,5 @@ That line of work runs through three connected threads:
 
 Alongside these I work on model merging and knowledge editing, temporal and multi-hop
 reasoning, and LLMs for recommendation. Code for most projects is on
-[GitHub](https://github.com/Fzkuji).
+[GitHub](https://github.com/fzkuji-neo).
 
