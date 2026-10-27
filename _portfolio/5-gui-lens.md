@@ -10,4 +10,4 @@ GUI-Lens improves click localization on dense, high-resolution interfaces withou
 
 The model selects progressively finer crops or proposes a click based on the instruction and current view. Crops and clicks are checked against the instruction, and accepted local click coordinates are mapped back to the original screen.
 
-GUI-Lens is the visual grounding method associated with [GUI-Agent-Harness](/portfolio/2-gui-agent-harness). The repository provides the implementation and ScreenSpot-Pro evaluation instructions.
+GUI-Lens provides visual grounding for desktop agent workflows in [OpenProgram](/portfolio/1-openprogram). The repository provides the implementation and ScreenSpot-Pro evaluation instructions.

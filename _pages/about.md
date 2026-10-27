@@ -55,7 +55,7 @@ That line of work runs through three connected threads:
   implemented in [OpenProgram](/portfolio/1-openprogram)).
 - **Grounded interaction** — letting agents act in real interfaces through active visual
   observation rather than one-shot prediction
-  ([GUI-Lens](/publication/2026-08-04-GUI-Lens); [GUI-Agent-Harness](/portfolio/2-gui-agent-harness),
+  ([GUI-Lens](/publication/2026-08-04-GUI-Lens); desktop workflows in [OpenProgram](/portfolio/1-openprogram),
   79.8% on OSWorld Multi-Apps).
 - **Efficient and well-behaved attention** — what models spend their context on, and why
   they misallocate it ([Lazy Attention](/publication/2026-01-02-Lazy-Attention),
