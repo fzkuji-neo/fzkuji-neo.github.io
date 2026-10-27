@@ -1,0 +1,14 @@
+---
+layout: archive
+title: "Projects"
+permalink: /projects/
+author_profile: true
+---
+
+{% include base_path %}
+
+<p>Open-source agent systems for programmable workflows, desktop interaction, and automated research. Select a project to read about its methods, results, and implementation.</p>
+
+{% for post in site.portfolio %}
+  {% include archive-single.html %}
+{% endfor %}
